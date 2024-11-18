@@ -30,6 +30,6 @@ public class ChatHistory implements IterableByUser{
 
     @Override
     public Iterator iterator(User userToSearchWith) {
-        return null;
+        return new SearchMessagesByUser(history, userToSearchWith);
     }
 }
