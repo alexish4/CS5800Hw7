@@ -33,7 +33,7 @@ public class User implements IterableByUser {
     public void sendMessage(String message, List<String> recipients) {
         String timeStamp = String.valueOf(System.currentTimeMillis());
         Message messageToSend = new Message(name, recipients, message, timeStamp);
-        chatHistory.add(new MessageMemento(message, timeStamp, name));
+        chatHistory.add(new MessageMemento(message, timeStamp, recipients));
 
         mediator.sendMessage(messageToSend);
     }

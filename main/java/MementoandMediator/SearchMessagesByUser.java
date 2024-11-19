@@ -18,7 +18,7 @@ public class SearchMessagesByUser implements Iterator<MessageMemento> {
     public boolean hasNext() {
         while (currentIndex < messages.size()) {
             MessageMemento messageMemento = messages.get(currentIndex);
-            if(messageMemento.getSender().equals(userToSearchWith.getName())) {
+            if(messageMemento.getReceivers().contains(userToSearchWith.getName())) {
                 return true;
             }
             currentIndex++;
@@ -29,7 +29,7 @@ public class SearchMessagesByUser implements Iterator<MessageMemento> {
     @Override
     public MessageMemento next() {
         if(hasNext()) {
-            MessageMemento messageMemento = messages.get(currentIndex++);
+            return messages.get(currentIndex++);
         }
 
         return null;
