@@ -1,8 +1,10 @@
 import MementoandMediator.ChatHistory;
 import MementoandMediator.ChatServer;
+import MementoandMediator.MessageMemento;
 import MementoandMediator.User;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 
 public class MessageAndMediatorDriver {
@@ -34,6 +36,14 @@ public class MessageAndMediatorDriver {
 
         alice.blockUser("Bob");
         bob.sendMessage("Do you want to be malicious hackers?", Arrays.asList("Alice"));
+
+        Iterator iterator = carlos.iterator(frank);
+        while (iterator.hasNext()) {
+            MessageMemento message = (MessageMemento) iterator.next();
+            if(message != null) {
+                System.out.println(message.toString());
+            }
+        }
 
     }
 }
