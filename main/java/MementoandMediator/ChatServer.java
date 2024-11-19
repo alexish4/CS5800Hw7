@@ -18,6 +18,14 @@ public class ChatServer {
         return instance;
     }
 
+    public Map<String, User> getUsers() {
+        return users;
+    }
+
+    public Map<String, Set<String>> getBlockList() {
+        return blockList;
+    }
+
     public void registerUser(User user) {
         users.put(user.getName(), user);
         blockList.put(user.getName(), new HashSet<>());

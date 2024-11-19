@@ -5,7 +5,11 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ChatHistory implements IterableByUser{
-    List<MessageMemento> history = new ArrayList<>();
+    private List<MessageMemento> history = new ArrayList<>();
+
+    public List<MessageMemento> getHistory() {
+        return history;
+    }
 
     public void add(MessageMemento message) {
         history.add(message);

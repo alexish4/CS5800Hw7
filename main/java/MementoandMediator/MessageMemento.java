@@ -1,10 +1,9 @@
 package MementoandMediator;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MessageMemento {
-    private String messageContent;
+    private final String messageContent;
     String timeStamp;
     List<String> receivers;
 
